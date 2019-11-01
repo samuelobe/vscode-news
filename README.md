@@ -1,4 +1,4 @@
-# vs-news README
+# vscode-news README
 
 This is the README for your extension "vs-news". After writing up a brief description, we recommend including the following sections.
 
