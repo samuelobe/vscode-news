@@ -1,0 +1,99 @@
+{
+  "name": "vscode-news",
+  "displayName": "VS Code News",
+  "description": "This extension will provide news headlines in the status bar.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.39.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Edit VS Code News configuration",
+      "type": "object",
+      "properties": {
+        "vscode-news.api-key": {
+          "type": "string",
+          "scope": "application",
+          "default": "1acc1f7874a746c7900cdf88ffe76646",
+          "description": "API Key required for NewsAPI to run"
+        },
+        "vscode-news.refresh-time": {
+          "type": "number",
+          "scope": "application",
+          "default": 600000,
+          "description": "Time interval between news refreshes"
+        },
+        "vscode-news.headline-time-interval": {
+          "type": "number",
+          "scope": "application",
+          "default": 5000,
+          "description": "Time interval between headline update"
+        },
+        "vscode-news.sources": {
+          "type": "string",
+          "scope": "application",
+          "default": "cnn,msnbc",
+          "description": "Enter in your preferred news sources"
+        },
+        "vscode-news.language": {
+          "type": "string",
+          "scope": "application",
+          "default": "",
+          "description": "Enter in your preferred language"
+        },
+        "vscode-news.query": {
+          "type": "string",
+          "scope": "application",
+          "default": "",
+          "description": "Enter in your preferred query"
+        },
+        "vscode-news.catagory": {
+          "type": "string",
+          "scope": "application",
+          "default": "",
+          "description": "Enter in your preferred catagory"
+        },
+        "vscode-news.country": {
+          "type": "string",
+          "scope": "application",
+          "default": "",
+          "description": "Enter in your preferred source's country"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "vscodenews.showNews",
+        "title": "YEET"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^10.12.21",
+    "@types/vscode": "^1.39.0",
+    "glob": "^7.1.4",
+    "mocha": "^6.1.4",
+    "typescript": "^3.3.1",
+    "tslint": "^5.12.1",
+    "vscode-test": "^1.2.0"
+  },
+  "dependencies": {
+    "newsapi": "^2.4.0"
+  }
+}
