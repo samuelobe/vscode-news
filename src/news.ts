@@ -1,5 +1,4 @@
 import * as vscode from "vscode";
-const NewsAPI = require("newsapi");
 
 export default class News {
     private newsAPIKey: any;
@@ -11,46 +10,47 @@ export default class News {
     private country : any;
     private language : any;
 
-    constructor(){}
-
+    getJSONConfig(str : string) : any{
+        return vscode.workspace.getConfiguration().get(str);
+    }
     
     getNewsAPIKey() : any{
-        this.newsAPIKey = vscode.workspace.getConfiguration().get("vscode-news.api-key");
+        this.newsAPIKey = this.getJSONConfig("vscode-news.api-key");
         return this.newsAPIKey;
     }
 
     getHeadlineTimeInterval() : any{
-        this.headlineTimeInterval = vscode.workspace.getConfiguration().get("vscode-news.headline-time-interval");
+        this.headlineTimeInterval = this.getJSONConfig("vscode-news.headline-time-interval");
         return this.headlineTimeInterval;
     }
 
     getSources() : any{
-        this.sources = vscode.workspace.getConfiguration().get("vscode-news.sources");
+        this.sources = this.getJSONConfig("vscode-news.sources");
         return this.sources;
     }
 
     getRefreshTime() : any{
-        this.refreshTime = vscode.workspace.getConfiguration().get("vscode-news.refresh-time");
+        this.refreshTime = this.getJSONConfig("vscode-news.refresh-time");
         return this.refreshTime;
     }
 
     getLanguage() : any{
-        this.language = vscode.workspace.getConfiguration().get("vscode-news.language");
+        this.language = this.getJSONConfig("vscode-news.language");
         return this.language;
     }
 
     getQuery() : any{
-        this.query = vscode.workspace.getConfiguration().get("vscode-news.query");
+        this.query = this.getJSONConfig("vscode-news.query");
         return this.query;
     }
 
     getCatagory() : any{
-        this.catagory = vscode.workspace.getConfiguration().get("vscode-news.catagory");
+        this.catagory = this.getJSONConfig("vscode-news.catagory");
         return this.catagory;
     }
 
     getCountry() : any{
-        this.language = vscode.workspace.getConfiguration().get("vscode-news.country");
+        this.language = this.getJSONConfig("vscode-news.country");
         return this.country;
     }
 }
