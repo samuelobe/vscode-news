@@ -15,7 +15,7 @@
   "main": "./out/extension.js",
   "contributes": {
     "configuration": {
-      "title": "Edit VS Code News configuration",
+      "title": "VS Code News",
       "type": "object",
       "properties": {
         "vscode-news.api-key": {
@@ -28,13 +28,13 @@
           "type": "number",
           "scope": "application",
           "default": 600000,
-          "description": "Time interval between news refreshes"
+          "description": "Time interval between news refreshes in milliseconds"
         },
         "vscode-news.headline-time-interval": {
           "type": "number",
           "scope": "application",
           "default": 5000,
-          "description": "Time interval between headline update"
+          "description": "Time interval between headline update in milliseconds"
         },
         "vscode-news.sources": {
           "type": "string",
