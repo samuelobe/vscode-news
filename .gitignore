@@ -1,3 +1,6 @@
 node_modules
 out
 .vscode
+/vscode-news-0.0.1.vsix
+/tslint.json
+/tsconfig.json

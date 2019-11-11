@@ -1,11 +1,17 @@
 {
   "name": "vscode-news",
+  "publisher": "obes",
   "displayName": "VS Code News",
   "description": "This extension will provide news headlines in the status bar.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.39.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samuelobe/vscode-news"
+  },
+  "homepage": "https://github.com/samuelobe/vscode-news",
   "categories": [
     "Other"
   ],
@@ -21,7 +27,7 @@
         "vscode-news.api-key": {
           "type": "string",
           "scope": "application",
-          "default": "1acc1f7874a746c7900cdf88ffe76646",
+          "default": "",
           "description": "API Key required for NewsAPI to run"
         },
         "vscode-news.refresh-time": {
